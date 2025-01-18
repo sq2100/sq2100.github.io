@@ -43,15 +43,30 @@
                             <div style="text-align:center">
                                 <p>
                                     <strong>Email:</strong> 
-                                    <!-- 邮箱链接 -->
-                                    <a href="mailto:sq2100@foxmail.com">sq2100@foxmail.com</a> 
-                                    <!-- 复制按钮 -->
-                                    <button onclick="navigator.clipboard.writeText('sq2100@foxmail.com'); this.innerText = 'Copied!'; setTimeout(() => { this.innerText = 'Copy'; }, 2000);" 
+                                    <!-- 使用HTML实体编码 -->
+                                    <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#113;&#50;&#49;&#48;&#48;&#64;&#102;&#111;&#120;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">
+                                        <!-- 使用JavaScript动态生成文本 -->
+                                        <script>
+                                            document.write(atob('c3EyMTAwQGZveG1haWwuY29t'));
+                                        </script>
+                                    </a>
+                                    <button onclick="copyEmail(event)" 
                                             style="height: 80%; background-color: rgb(244, 107, 78); color: white; cursor: pointer; border: none; border-radius: 8px;">
                                         Copy
                                     </button>
                                 </p>
                             </div>
+                            <script>
+                                function copyEmail(e) {
+                                    // 解码邮箱地址
+                                    const email = atob('c3EyMTAwQGZveG1haWwuY29t');
+                                    navigator.clipboard.writeText(email);
+                                    e.target.innerText = 'Copied!';
+                                    setTimeout(() => {
+                                        e.target.innerText = 'Copy';
+                                    }, 2000);
+                                }
+                            </script>
                             <p>
                                 <br>
                                 <!-- 简介段落 -->
