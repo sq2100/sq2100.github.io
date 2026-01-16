@@ -93,6 +93,50 @@
             margin: 20px 0;
             border-radius: 4px;
         }
+        .organizers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .organizer-card {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .organizer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        .organizer-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #e0e0e0;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+        }
+        .organizer-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #333333;
+            margin: 10px 0 5px 0;
+        }
+        .organizer-affiliation {
+            font-size: 14px;
+            color: #666666;
+            margin: 5px 0;
+        }
+        .organizer-email {
+            font-size: 14px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 
@@ -119,8 +163,7 @@
                     <a href="#organizers">Organizers</a> &nbsp/&nbsp
                     <a href="#speakers">Speakers</a> &nbsp/&nbsp
                     <a href="#schedule">Schedule</a> &nbsp/&nbsp
-                    <a href="#topics">Topics</a> &nbsp/&nbsp
-                    <a href="index.html">Back to Home</a>
+                    <a href="#topics">Topics</a>
                 </p>
 
                 <!-- Abstract Section -->
@@ -140,38 +183,32 @@
                 <!-- Organizers Section -->
                 <div id="organizers">
                     <h2 class="section-title">Workshop Organizers</h2>
-                    <table class="organizers-table">
-                        <tr>
-                            <th style="width: 5%;">#</th>
-                            <th style="width: 25%;">Name</th>
-                            <th style="width: 40%;">Affiliation</th>
-                            <th style="width: 30%;">Email</th>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Qi Shao</td>
-                            <td>University of Tokyo</td>
-                            <td><a href="mailto:sq2100@foxmail.com">sq2100@foxmail.com</a></td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Matteo Cianchetti</td>
-                            <td>Scuola Superiore Sant'Anna</td>
-                            <td><a href="mailto:matteo.cianchetti@santannapisa.it">matteo.cianchetti@santannapisa.it</a></td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Huichan Zhao</td>
-                            <td>Tsinghua University</td>
-                            <td><a href="mailto:zhaohuichan@mail.tsinghua.edu.cn">zhaohuichan@mail.tsinghua.edu.cn</a></td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Fumiya Iida</td>
-                            <td>University of Tokyo / University of Cambridge</td>
-                            <td><a href="mailto:fi224@cam.ac.uk">fi224@cam.ac.uk</a></td>
-                        </tr>
-                    </table>
+                    <div class="organizers-grid">
+                        <div class="organizer-card">
+                            <div class="organizer-photo">Photo</div>
+                            <div class="organizer-name">Qi Shao</div>
+                            <div class="organizer-affiliation">University of Tokyo</div>
+                            <div class="organizer-email"><a href="mailto:sq2100@foxmail.com">sq2100@foxmail.com</a></div>
+                        </div>
+                        <div class="organizer-card">
+                            <div class="organizer-photo">Photo</div>
+                            <div class="organizer-name">Matteo Cianchetti</div>
+                            <div class="organizer-affiliation">Scuola Superiore Sant'Anna</div>
+                            <div class="organizer-email"><a href="mailto:matteo.cianchetti@santannapisa.it">matteo.cianchetti@santannapisa.it</a></div>
+                        </div>
+                        <div class="organizer-card">
+                            <div class="organizer-photo">Photo</div>
+                            <div class="organizer-name">Huichan Zhao</div>
+                            <div class="organizer-affiliation">Tsinghua University</div>
+                            <div class="organizer-email"><a href="mailto:zhaohuichan@mail.tsinghua.edu.cn">zhaohuichan@mail.tsinghua.edu.cn</a></div>
+                        </div>
+                        <div class="organizer-card">
+                            <div class="organizer-photo">Photo</div>
+                            <div class="organizer-name">Fumiya Iida</div>
+                            <div class="organizer-affiliation">University of Tokyo / University of Cambridge</div>
+                            <div class="organizer-email"><a href="mailto:fi224@cam.ac.uk">fi224@cam.ac.uk</a></div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Description Section -->
@@ -226,72 +263,62 @@
                     <table class="speakers-table">
                         <tr>
                             <th style="width: 5%;">#</th>
-                            <th style="width: 25%;">Name</th>
-                            <th style="width: 35%;">Affiliation</th>
-                            <th style="width: 20%;">Career Stage</th>
+                            <th style="width: 30%;">Name</th>
+                            <th style="width: 50%;">Affiliation</th>
                             <th style="width: 15%;">Status</th>
                         </tr>
                         <tr>
                             <td>1</td>
                             <td>Yukie Nagai</td>
                             <td>University of Tokyo</td>
-                            <td>Senior</td>
                             <td>✓ Confirmed</td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>Shuguang Li</td>
                             <td>Tsinghua University</td>
-                            <td>Mid-career</td>
                             <td>✓ Confirmed</td>
                         </tr>
                         <tr>
                             <td>3</td>
                             <td>Yong-Lae Park</td>
                             <td>Seoul National University</td>
-                            <td>Senior</td>
                             <td>✓ Confirmed</td>
                         </tr>
                         <tr>
                             <td>4</td>
                             <td>Seppe Terryn</td>
                             <td>Vrije Universiteit Brussel</td>
-                            <td>Early-career</td>
                             <td>✓ Confirmed</td>
                         </tr>
                         <tr>
                             <td>5</td>
                             <td>Jonathan Rossiter</td>
                             <td>University of Bristol</td>
-                            <td>Senior</td>
                             <td>✓ Confirmed</td>
                         </tr>
                         <tr>
                             <td>6</td>
                             <td>Kenjiro Tadakuma</td>
                             <td>Osaka University</td>
-                            <td>Senior</td>
                             <td>✓ Confirmed</td>
                         </tr>
                         <tr>
                             <td>7</td>
                             <td>Andrea Bertolini</td>
                             <td>Scuola Superiore Sant'Anna</td>
-                            <td>Mid-career</td>
                             <td>✓ Confirmed</td>
                         </tr>
                         <tr>
                             <td>8</td>
                             <td>Kenji Suzuki</td>
                             <td>University of Tsukuba</td>
-                            <td>Senior</td>
                             <td>✓ Confirmed</td>
                         </tr>
                         <tr>
                             <td>9</td>
                             <td>Matteo Cianchetti</td>
                             <td>Scuola Superiore Sant'Anna</td>
-                            <td>Mid-career</td>
                             <td>✓ Confirmed</td>
                         </tr>
                     </table>
@@ -413,36 +440,6 @@
                     </table>
                 </div>
 
-                <!-- Interaction Section -->
-                <div id="interaction">
-                    <h2 class="section-title">Participant Engagement & Interaction</h2>
-                    <div class="abstract-text">
-                        <p>
-                            This workshop is designed to foster active participation, meaningful dialogue, and hands-on interaction among attendees. We aim to create an open and inclusive environment where participants can engage with the topic of "embodied safety" not only through presentations but also through direct experiences and collaborative reflection.
-                        </p>
-                        <br>
-                        <h3>Pre- and Post-Workshop Networking</h3>
-                        <p>
-                            A dedicated online platform (via a workshop website and Discord server) will be launched before the conference. This platform will host information about the workshop, introduce the speakers, and share accepted poster and demo abstracts—including those not presented on-site due to time limitations. The Discord server will remain active during and after the workshop as a hub for continued discussion and collaboration.
-                        </p>
-                        <br>
-                        <h3>Poster and Demo Sessions</h3>
-                        <p>
-                            Ten selected posters and five live demos will be displayed throughout the workshop venue. Participants will be encouraged to interact directly with the robots, observe their embodied safety features, and discuss design insights with presenters. Each participant will receive "voting stickers" to select the Best Poster and Best Demo, based on innovation, safety, and user experience. Winners will be awarded customized soft-structure trophies, reflecting the spirit of soft robotics.
-                        </p>
-                        <br>
-                        <h3>Invited Talks and Panel Discussion</h3>
-                        <p>
-                            Nine invited talks will provide diverse perspectives from leading researchers. A concluding panel will invite both speakers and attendees to engage in open discussion. We will incorporate audience polls and live question cards to ensure two-way communication and collective reflection on how embodied safety can shape the future of human–robot coexistence.
-                        </p>
-                        <br>
-                        <h3>Special Issue and Review Paper</h3>
-                        <p>
-                            This workshop plans to collaborate with relevant academic journals to publish a special issue focused on safety in soft robotics. In addition, all invited speakers will jointly author a review paper summarizing the latest progress and future directions in embodied safety. The upcoming <strong>IEEE Transactions on Soft Robotics</strong> will be our primary target venue for the special issue collaboration and the review paper submission, aiming to amplify the academic impact of the workshop.
-                        </p>
-                    </div>
-                </div>
-
                 <!-- Footer -->
                 <br>
                 <br>
@@ -450,8 +447,7 @@
                     <tr>
                         <td>
                             <p align="center">
-                                <a href="#abstract">Back to Top</a> | 
-                                <a href="index.html">Main Website</a>
+                                <a href="#abstract">Back to Top</a>
                             </p>
                             <br>
                             <p align="center" style="font-size: 14px; color: #777777;">
