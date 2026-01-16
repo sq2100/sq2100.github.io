@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Living with Robots Safely - RoboSoft 2026 Workshop</title>
+    <meta name="author" content="Qi Shao">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png">
+    <style>
+        .workshop-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+        .workshop-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        .workshop-subtitle {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .workshop-info {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333333;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        .organizers-table, .speakers-table, .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .organizers-table th, .speakers-table th, .schedule-table th {
+            background-color: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 700;
+        }
+        .organizers-table td, .speakers-table td, .schedule-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .organizers-table tr:hover, .speakers-table tr:hover, .schedule-table tr:hover {
+            background-color: #f5f5f5;
+        }
+        .topics-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .topic-item {
+            background-color: #f8f9fa;
+            padding: 12px 15px;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+        }
+        .session-header {
+            background-color: #764ba2;
+            color: white;
+            font-weight: 700;
+        }
+        .time-col {
+            width: 15%;
+            font-weight: 700;
+            color: #667eea;
+        }
+        .abstract-text {
+            text-align: justify;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+        .highlight-box {
+            background-color: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <table width="100%" style="max-width: 1200px;" align="center" border="0" cellspacing="0" cellpadding="20">
+        <tr>
+            <td>
+                <!-- Workshop Header -->
+                <div class="workshop-header">
+                    <div class="workshop-title">
+                        Living with Robots Safely:<br>Embodying Asimov's First Law through Soft Robotics
+                    </div>
+                    <div class="workshop-subtitle">
+                        IEEE RAS RoboSoft 2026 Workshop
+                    </div>
+                    <div class="workshop-info">
+                        📍 Kanazawa, Japan | 🗓️ Full Day Workshop
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <p style="text-align:center; margin-bottom: 30px;">
+                    <a href="#abstract">Abstract</a> &nbsp/&nbsp
+                    <a href="#organizers">Organizers</a> &nbsp/&nbsp
+                    <a href="#speakers">Speakers</a> &nbsp/&nbsp
+                    <a href="#schedule">Schedule</a> &nbsp/&nbsp
+                    <a href="#topics">Topics</a> &nbsp/&nbsp
+                    <a href="index.html">Back to Home</a>
+                </p>
+
+                <!-- Abstract Section -->
+                <div id="abstract">
+                    <h2 class="section-title">Abstract</h2>
+                    <div class="abstract-text">
+                        <p>
+                            Asimov's First Law states that "a robot may not injure a human being, or through inaction, allow a human being to come to harm." Since its proposal, it has been regarded as a core principle guiding robots toward safe coexistence with humans in the real world. As robots increasingly enter human living spaces, <strong>embodied safety</strong> has become the foundation of trust in human–robot interaction. This concept emphasizes that a robot's physical body must be inherently safe, ensuring through its material and structural properties that it cannot harm humans. Soft robotics provides a tangible approach to realizing this principle. With compliant materials, deformable structures, and adaptive control, soft robots offer the physical foundation for achieving the essence of the First Law.
+                        </p>
+                        <br>
+                        <p>
+                            This workshop will highlight recent advances in soft robotics for wearable technologies, assistive systems, education, and human–robot collaboration, exploring how embodied safety can enable robots to truly integrate into human environments. The main discussion topics will include how to define safety through measurable interaction metrics and physical thresholds, how to verify and validate safety both theoretically and experimentally, and how to balance safety-oriented compliance with maintaining performance and precision. Through cross-disciplinary discussions, this workshop aims to bridge the gap between conceptual ideals and practical implementations, fostering the embodied safety that will help robots become a trusted part of everyday human life.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Organizers Section -->
+                <div id="organizers">
+                    <h2 class="section-title">Workshop Organizers</h2>
+                    <table class="organizers-table">
+                        <tr>
+                            <th style="width: 5%;">#</th>
+                            <th style="width: 25%;">Name</th>
+                            <th style="width: 40%;">Affiliation</th>
+                            <th style="width: 30%;">Email</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Qi Shao</td>
+                            <td>University of Tokyo</td>
+                            <td><a href="mailto:sq2100@foxmail.com">sq2100@foxmail.com</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Matteo Cianchetti</td>
+                            <td>Scuola Superiore Sant'Anna</td>
+                            <td><a href="mailto:matteo.cianchetti@santannapisa.it">matteo.cianchetti@santannapisa.it</a></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Huichan Zhao</td>
+                            <td>Tsinghua University</td>
+                            <td><a href="mailto:zhaohuichan@mail.tsinghua.edu.cn">zhaohuichan@mail.tsinghua.edu.cn</a></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Fumiya Iida</td>
+                            <td>University of Tokyo / University of Cambridge</td>
+                            <td><a href="mailto:fi224@cam.ac.uk">fi224@cam.ac.uk</a></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Description Section -->
+                <div id="description">
+                    <h2 class="section-title">Workshop Description</h2>
+                    <div class="abstract-text">
+                        <p>
+                            For decades, the vision of robots as helpful companions in our homes, schools, and hospitals has been a driving force in technological innovation. However, this vision is fundamentally constrained by a single, critical challenge: <strong>safety</strong>. Traditionally, robots have been rigid, powerful, and fast—traits that make them highly effective in structured industrial settings but inherently dangerous in the chaotic, unpredictable environments of human daily life.
+                        </p>
+                        <br>
+                        <p>
+                            The First Law of Robotics, as proposed in Isaac Asimov's seminal works, holds the highest priority among his Three Laws. It states: "a robot may not injure a human being, or through inaction, allow a human being to come to harm." This principle has long served as the guiding ethical ideal for robotics. Historically, attempts to uphold this law have focused almost exclusively on software: complex sensors, redundant control systems, and sophisticated algorithms designed to prevent a rigid robot from making a harmful mistake. This paradigm, however, is incomplete. A 100 kg steel robot, even when perfectly controlled, remains a significant hazard by its very presence. A system failure or an unexpected interaction could still lead to catastrophic injury.
+                        </p>
+                        <br>
+                        <p>
+                            This workshop addresses this fundamental gap by focusing on <strong>"Embodied Safety,"</strong> which is the principle that a robot's physical design, not just its programming, must be the first line of defense. Soft robotics represents a paradigm shift in this pursuit. By utilizing compliant materials, deformable structures, and bio-inspired designs, soft robots are inherently safe. Their bodies can absorb impacts, conform to unexpected contact, and interact with humans with a gentleness that rigid robots cannot replicate. This technology provides a physical, tangible pathway to fulfilling the true spirit of Asimov's First Law, expanding the notion of safety from a purely computational concern to an integrated design challenge that encompasses material, structural, and control dimensions.
+                        </p>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h3 style="margin-top: 0;">Workshop Objectives</h3>
+                        <p><strong>1. To Showcase State-of-the-Art:</strong> Present and discuss the latest advancements in soft robotic systems designed for close human proximity, including breakthroughs in materials, fabrication, sensing, and control.</p>
+                        <br>
+                        <p><strong>2. To Explore Key Application Domains:</strong> Highlight the transformative impact of soft robotics in critical areas such as wearable technology, assistive and rehabilitation devices, safe human-robot collaboration, and educational tools.</p>
+                        <br>
+                        <p><strong>3. To Bridge Disciplinary Gaps:</strong> Foster cross-disciplinary dialogue between material scientists, roboticists, and HRI specialists to co-design robots where material properties and control strategies work in unison.</p>
+                        <br>
+                        <p><strong>4. To Identify Future Challenges:</strong> Collaboratively identify remaining hurdles—such as durability, power, and scalability—and outline a research roadmap for creating robust, reliable, and truly safe soft robots.</p>
+                    </div>
+                </div>
+
+                <!-- Topics Section -->
+                <div id="topics">
+                    <h2 class="section-title">Topics of Interest</h2>
+                    <div class="topics-list">
+                        <div class="topic-item">Embodied Safety in Robotics</div>
+                        <div class="topic-item">Human–Robot Interaction</div>
+                        <div class="topic-item">Passive and Active Safety Mechanisms</div>
+                        <div class="topic-item">Wearable Devices</div>
+                        <div class="topic-item">Safe and Adaptive Control</div>
+                        <div class="topic-item">Assistive and Rehabilitation Devices</div>
+                        <div class="topic-item">Soft Actuators and Sensors</div>
+                        <div class="topic-item">Adaptive and Safe Control Strategies</div>
+                        <div class="topic-item">Educational and Social Robotics</div>
+                    </div>
+                </div>
+
+                <!-- Invited Speakers Section -->
+                <div id="speakers">
+                    <h2 class="section-title">Invited Speakers</h2>
+                    <p>We are honored to have confirmed the participation of the following distinguished speakers:</p>
+                    <table class="speakers-table">
+                        <tr>
+                            <th style="width: 5%;">#</th>
+                            <th style="width: 25%;">Name</th>
+                            <th style="width: 35%;">Affiliation</th>
+                            <th style="width: 20%;">Career Stage</th>
+                            <th style="width: 15%;">Status</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Yukie Nagai</td>
+                            <td>University of Tokyo</td>
+                            <td>Senior</td>
+                            <td>✓ Confirmed</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Shuguang Li</td>
+                            <td>Tsinghua University</td>
+                            <td>Mid-career</td>
+                            <td>✓ Confirmed</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Yong-Lae Park</td>
+                            <td>Seoul National University</td>
+                            <td>Senior</td>
+                            <td>✓ Confirmed</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Seppe Terryn</td>
+                            <td>Vrije Universiteit Brussel</td>
+                            <td>Early-career</td>
+                            <td>✓ Confirmed</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Jonathan Rossiter</td>
+                            <td>University of Bristol</td>
+                            <td>Senior</td>
+                            <td>✓ Confirmed</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Kenjiro Tadakuma</td>
+                            <td>Osaka University</td>
+                            <td>Senior</td>
+                            <td>✓ Confirmed</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Andrea Bertolini</td>
+                            <td>Scuola Superiore Sant'Anna</td>
+                            <td>Mid-career</td>
+                            <td>✓ Confirmed</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Kenji Suzuki</td>
+                            <td>University of Tsukuba</td>
+                            <td>Senior</td>
+                            <td>✓ Confirmed</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Matteo Cianchetti</td>
+                            <td>Scuola Superiore Sant'Anna</td>
+                            <td>Mid-career</td>
+                            <td>✓ Confirmed</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Schedule Section -->
+                <div id="schedule">
+                    <h2 class="section-title">Tentative Schedule</h2>
+                    <table class="schedule-table">
+                        <tr>
+                            <th style="width: 15%;">Time</th>
+                            <th style="width: 35%;">Description</th>
+                            <th style="width: 50%;">Topic</th>
+                        </tr>
+                        <tr>
+                            <td class="time-col">08:45-09:00</td>
+                            <td>Registration & Welcome Coffee</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">09:00-09:15</td>
+                            <td><strong>Workshop Opening</strong></td>
+                            <td>Welcome, Introduction to Workshop Goals, and the Concept of Embodied Safety</td>
+                        </tr>
+                        <tr class="session-header">
+                            <td colspan="3">Session 1: Foundations & Design for Embodied Safety</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">09:15-09:35</td>
+                            <td>Invited Talk 1: Prof. Yukie Nagai</td>
+                            <td>Rethinking Safety through Physiological Embodiment and Cognitive Diversity</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">09:35-09:55</td>
+                            <td>Invited Talk 2: Prof. Matteo Cianchetti</td>
+                            <td>Soft yet Effective Robots via Holistic Co-Design</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">09:55-10:15</td>
+                            <td>Invited Talk 3: Prof. Kenjiro Tadakuma</td>
+                            <td>Inherently Safe Mechanisms for Soft Robotics</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">10:15-10:40</td>
+                            <td><strong>Flash Talks (Posters) 1</strong></td>
+                            <td>5 posters × 5 minutes each</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">10:40-11:10</td>
+                            <td><strong>Coffee Break</strong></td>
+                            <td>—</td>
+                        </tr>
+                        <tr class="session-header">
+                            <td colspan="3">Session 2: Core Technologies for Safe Soft Robots</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">11:10-11:30</td>
+                            <td>Invited Talk 4: Prof. Shuguang Li</td>
+                            <td>Soft Actuators and Materials for Safe Human-Robot Interaction (Tentative)</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">11:30-11:50</td>
+                            <td>Invited Talk 5: Prof. Yong-Lae Park</td>
+                            <td>Soft Sensing Strategies for Embodied Safety and Proprioception (Tentative)</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">11:50-12:10</td>
+                            <td>Invited Talk 6: Prof. Seppe Terryn</td>
+                            <td>Material and Sensing Strategies for Resilient and Safe Robotics</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">12:10-12:35</td>
+                            <td><strong>Flash Talks (Posters) 2</strong></td>
+                            <td>5 posters × 5 minutes each</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">12:35-13:45</td>
+                            <td><strong>Lunch Break</strong></td>
+                            <td>—</td>
+                        </tr>
+                        <tr class="session-header">
+                            <td colspan="3">Session 3: Applications & Societal Impact</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">13:45-14:05</td>
+                            <td>Invited Talk 7: Prof. Kenji Suzuki</td>
+                            <td>Wearable Soft Robotics for Adaptive Safety and Embodied Assistance</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">14:05-14:25</td>
+                            <td>Invited Talk 8: Prof. Jonathan Rossiter</td>
+                            <td>Can you trust your robotic clothing?</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">14:25-14:45</td>
+                            <td>Invited Talk 9: Prof. Andrea Bertolini</td>
+                            <td>The Legal and Ethical Frameworks for Embodied Safety (Tentative)</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">14:45-15:35</td>
+                            <td><strong>Flash Talks (Demos)</strong></td>
+                            <td>5 live demonstrations × 10 minutes each; participants interact with prototype robots</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">15:35-16:00</td>
+                            <td><strong>Coffee Break</strong></td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">16:00-16:45</td>
+                            <td><strong>Panel Discussion</strong></td>
+                            <td>From Asimov's Law to Reality</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">16:45-17:00</td>
+                            <td><strong>Closing Remarks</strong></td>
+                            <td>Summary of key takeaways and thanks to participants</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Interaction Section -->
+                <div id="interaction">
+                    <h2 class="section-title">Participant Engagement & Interaction</h2>
+                    <div class="abstract-text">
+                        <p>
+                            This workshop is designed to foster active participation, meaningful dialogue, and hands-on interaction among attendees. We aim to create an open and inclusive environment where participants can engage with the topic of "embodied safety" not only through presentations but also through direct experiences and collaborative reflection.
+                        </p>
+                        <br>
+                        <h3>Pre- and Post-Workshop Networking</h3>
+                        <p>
+                            A dedicated online platform (via a workshop website and Discord server) will be launched before the conference. This platform will host information about the workshop, introduce the speakers, and share accepted poster and demo abstracts—including those not presented on-site due to time limitations. The Discord server will remain active during and after the workshop as a hub for continued discussion and collaboration.
+                        </p>
+                        <br>
+                        <h3>Poster and Demo Sessions</h3>
+                        <p>
+                            Ten selected posters and five live demos will be displayed throughout the workshop venue. Participants will be encouraged to interact directly with the robots, observe their embodied safety features, and discuss design insights with presenters. Each participant will receive "voting stickers" to select the Best Poster and Best Demo, based on innovation, safety, and user experience. Winners will be awarded customized soft-structure trophies, reflecting the spirit of soft robotics.
+                        </p>
+                        <br>
+                        <h3>Invited Talks and Panel Discussion</h3>
+                        <p>
+                            Nine invited talks will provide diverse perspectives from leading researchers. A concluding panel will invite both speakers and attendees to engage in open discussion. We will incorporate audience polls and live question cards to ensure two-way communication and collective reflection on how embodied safety can shape the future of human–robot coexistence.
+                        </p>
+                        <br>
+                        <h3>Special Issue and Review Paper</h3>
+                        <p>
+                            This workshop plans to collaborate with relevant academic journals to publish a special issue focused on safety in soft robotics. In addition, all invited speakers will jointly author a review paper summarizing the latest progress and future directions in embodied safety. The upcoming <strong>IEEE Transactions on Soft Robotics</strong> will be our primary target venue for the special issue collaboration and the review paper submission, aiming to amplify the academic impact of the workshop.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <br>
+                <br>
+                <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>
+                            <p align="center">
+                                <a href="#abstract">Back to Top</a> | 
+                                <a href="index.html">Main Website</a>
+                            </p>
+                            <br>
+                            <p align="center" style="font-size: 14px; color: #777777;">
+                                Living with Robots Safely Workshop @ IEEE RAS RoboSoft 2026
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
