@@ -16,6 +16,28 @@
             text-align: center;
             margin-bottom: 30px;
             border-radius: 10px;
+            position: relative;
+        }
+        .workshop-logos {
+            position: absolute;
+            top: 12px;
+            right: 14px;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        .workshop-logos-left {
+            position: absolute;
+            top: 12px;
+            left: 14px;
+            display: flex;
+            align-items: center;
+        }
+        .workshop-logo {
+            width: auto;
+            height: 36px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
         }
         .workshop-title {
             font-size: 32px;
@@ -24,12 +46,31 @@
             line-height: 1.3;
         }
         .workshop-subtitle {
-            font-size: 20px;
+            font-size: 24px;
             margin-bottom: 10px;
+        }
+        .workshop-subtitle a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .workshop-subtitle a:hover {
+            text-decoration: none;
         }
         .workshop-info {
             font-size: 16px;
             opacity: 0.9;
+        }
+        @media (max-width: 700px) {
+            .workshop-logos {
+                position: static;
+                justify-content: center;
+                margin-bottom: 12px;
+            }
+            .workshop-logos-left {
+                position: static;
+                justify-content: center;
+                margin-bottom: 12px;
+            }
         }
         .section-title {
             font-size: 24px;
@@ -121,6 +162,12 @@
             justify-content: center;
             color: #999;
             font-size: 14px;
+            overflow: hidden;
+        }
+        .organizer-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         .organizer-name {
             font-size: 18px;
@@ -147,6 +194,142 @@
             color: #667eea;
             font-weight: 600;
         }
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .speaker-card {
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .speaker-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        .speaker-photo {
+            width: 120px;
+            height: 150px;
+            border-radius: 8px;
+            background-color: #e0e0e0;
+            margin: 0 auto 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .speaker-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .speaker-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: #333333;
+            margin: 10px 0 5px 0;
+        }
+        .speaker-affiliation {
+            font-size: 13px;
+            color: #666666;
+            line-height: 1.4;
+        }
+        .call-box {
+            background-color: #ffe8e8;
+            border-left: 4px solid #f5576c;
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+        .call-box h3 {
+            font-size: 18px;
+            margin-top: 0;
+            margin-bottom: 8px;
+            color: #d63447;
+        }
+        .call-box p {
+            color: #333333;
+            line-height: 1.5;
+            margin: 6px 0;
+            font-size: 14px;
+        }
+        .contribution-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .contribution-card {
+            background-color: white;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #ffcccc;
+        }
+        .contribution-card h4 {
+            font-size: 15px;
+            margin-top: 0;
+            margin-bottom: 6px;
+            color: #d63447;
+        }
+        .contribution-card p {
+            margin: 3px 0;
+            line-height: 1.4;
+            font-size: 13px;
+            color: #555555;
+        }
+        .important-dates {
+            background-color: white;
+            padding: 12px;
+            border-radius: 5px;
+            margin: 10px 0;
+            border: 1px solid #ffcccc;
+        }
+        .important-dates h4 {
+            font-size: 15px;
+            margin-top: 0;
+            margin-bottom: 8px;
+            color: #d63447;
+        }
+        .date-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0;
+            border-bottom: 1px solid #ffe8e8;
+        }
+        .date-item:last-child {
+            border-bottom: none;
+        }
+        .date-label {
+            font-weight: 600;
+            color: #555555;
+            font-size: 13px;
+        }
+        .date-value {
+            font-weight: 700;
+            font-size: 14px;
+            color: #d63447;
+        }
+        .submission-box {
+            background-color: white;
+            padding: 12px;
+            border-radius: 5px;
+            margin-top: 10px;
+            border: 1px solid #ffcccc;
+        }
+        .submission-box p {
+            margin: 0;
+            font-size: 13px;
+            line-height: 1.5;
+            color: #555555;
+        }
+        .submission-box strong {
+            color: #d63447;
+        }
     </style>
 </head>
 
@@ -156,24 +339,36 @@
             <td>
                 <!-- Workshop Header -->
                 <div class="workshop-header">
+                    <div class="workshop-logos-left">
+                        <a href="https://www.robosoft2026.org/program/workshops/">
+                            <img class="workshop-logo" src="images/avatar/RoboSoft2026_logo_menu_1280.png" alt="RoboSoft 2026 Logo">
+                        </a>
+                    </div>
+                    <div class="workshop-logos">
+                        <img class="workshop-logo" src="images/avatar/raslogo.png" alt="RAS Logo">
+                        <img class="workshop-logo" src="images/avatar/IEEE-Logo.jpg" alt="IEEE Logo">
+                    </div>
                     <div class="workshop-title">
                         Living with Robots Safely:<br>Embodying Asimov's First Law through Soft Robotics
                     </div>
                     <div class="workshop-subtitle">
-                        IEEE RAS RoboSoft 2026 Workshop
+                        <a href="https://www.robosoft2026.org/program/workshops/">
+                            IEEE RAS RoboSoft 2026 Workshop
+                        </a>
                     </div>
                     <div class="workshop-info">
-                        📍 Kanazawa, Japan | 🗓️ Full Day Workshop
+                        &#x1F4CD; Kanazawa, Japan | &#x1F4C5; April 11, 2026
                     </div>
                 </div>
 
                 <!-- Navigation Links -->
                 <p style="text-align:center; margin-bottom: 30px;">
                     <a href="#abstract">Abstract</a> &nbsp/&nbsp
-                    <a href="#organizers">Organizers</a> &nbsp/&nbsp
+                    <a href="#call">Call for Contributions</a> &nbsp/&nbsp
                     <a href="#speakers">Speakers</a> &nbsp/&nbsp
-                    <a href="#schedule">Schedule</a> &nbsp/&nbsp
-                    <a href="#topics">Topics</a>
+                    <a href="#topics">Topics</a> &nbsp/&nbsp
+                    <a href="#organizers">Organizers</a> &nbsp/&nbsp
+                    <a href="#schedule">Schedule</a>
                 </p>
 
                 <!-- Abstract Section -->
@@ -190,28 +385,135 @@
                     </div>
                 </div>
 
+                <!-- Call for Contributions Section -->
+                <div id="call">
+                    <h2 class="section-title">Call for Contributions</h2>
+                    <div class="call-box">
+                        <h3>📢 We Welcome Your Contributions!</h3>
+                        <p>
+                            We invite researchers, practitioners, and students to contribute to this workshop through poster presentations or live demonstrations.
+                        </p>
+                        
+                        <div class="contribution-types">
+                            <div class="contribution-card">
+                                <h4>📊 Poster Presentation</h4>
+                                <p><strong>Format:</strong> 5-minute flash talk + poster session</p>
+                                <p><strong>Submission:</strong> PDF file of your poster</p>
+                            </div>
+                            <div class="contribution-card">
+                                <h4>🤖 Live Demonstration</h4>
+                                <p><strong>Format:</strong> 10-minute demo talk + hands-on session</p>
+                                <p><strong>Submission:</strong> PDF file of poster + demo video</p>
+                            </div>
+                        </div>
+
+                        <div class="important-dates">
+                            <h4>📅 Important Dates</h4>
+                            <div class="date-item">
+                                <span class="date-label">Submission Deadline:</span>
+                                <span class="date-value">March 18, 2026</span>
+                            </div>
+                            <div class="date-item">
+                                <span class="date-label">Notification of Acceptance:</span>
+                                <span class="date-value">March 25, 2026</span>
+                            </div>
+                        </div>
+
+                        <div class="submission-box">
+                            <p>
+                                <strong>📧 Submission:</strong> Please send your materials to <strong>shao-qi@g.ecc.u-tokyo.ac.jp</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Invited Speakers Section -->
+                <div id="speakers">
+                    <h2 class="section-title">Invited Speakers</h2>
+                    <div class="speakers-grid">
+                        <div class="speaker-card">
+                            <div class="speaker-photo"><img src="images/avatar/yukie_nagai.png" alt="Yukie Nagai"></div>
+                            <div class="speaker-name">Yukie Nagai</div>
+                            <div class="speaker-affiliation">University of Tokyo</div>
+                        </div>
+                        <div class="speaker-card">
+                            <div class="speaker-photo"><img src="images/avatar/shuguang_li.jpg" alt="Shuguang Li"></div>
+                            <div class="speaker-name">Shuguang Li</div>
+                            <div class="speaker-affiliation">Tsinghua University</div>
+                        </div>
+                        <div class="speaker-card">
+                            <div class="speaker-photo"><img src="images/avatar/yong_lae_park.jpg" alt="Yong-Lae Park"></div>
+                            <div class="speaker-name">Yong-Lae Park</div>
+                            <div class="speaker-affiliation">Seoul National University</div>
+                        </div>
+                        <div class="speaker-card">
+                            <div class="speaker-photo"><img src="images/avatar/seppe_terryn.png" alt="Seppe Terryn"></div>
+                            <div class="speaker-name">Seppe Terryn</div>
+                            <div class="speaker-affiliation">Vrije Universiteit Brussel</div>
+                        </div>
+                        <div class="speaker-card">
+                            <div class="speaker-photo"><img src="images/avatar/jonathan_rossiter.png" alt="Jonathan Rossiter"></div>
+                            <div class="speaker-name">Jonathan Rossiter</div>
+                            <div class="speaker-affiliation">University of Bristol</div>
+                        </div>
+                        <div class="speaker-card">
+                            <div class="speaker-photo"><img src="images/avatar/kenjiro_tadakuma.png" alt="Kenjiro Tadakuma"></div>
+                            <div class="speaker-name">Kenjiro Tadakuma</div>
+                            <div class="speaker-affiliation">Osaka University</div>
+                        </div>
+                        <div class="speaker-card">
+                            <div class="speaker-photo"><img src="images/avatar/andrea_bertolini.jpg" alt="Andrea Bertolini"></div>
+                            <div class="speaker-name">Andrea Bertolini</div>
+                            <div class="speaker-affiliation">Scuola Superiore Sant'Anna</div>
+                        </div>
+                        <div class="speaker-card">
+                            <div class="speaker-photo"><img src="images/avatar/kenji_suzuki.jpg" alt="Kenji Suzuki"></div>
+                            <div class="speaker-name">Kenji Suzuki</div>
+                            <div class="speaker-affiliation">University of Tsukuba</div>
+                        </div>
+                        <div class="speaker-card">
+                            <div class="speaker-photo"><img src="images/avatar/matteo_cianchetti.jpg" alt="Matteo Cianchetti"></div>
+                            <div class="speaker-name">Matteo Cianchetti</div>
+                            <div class="speaker-affiliation">Scuola Superiore Sant'Anna</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topics Section -->
+                <div id="topics">
+                    <h2 class="section-title">Topics of Interest</h2>
+                    <div class="topics-list">
+                        <div class="topic-item">Soft Robotics Safety</div>
+                        <div class="topic-item">Human–Robot Interaction</div>
+                        <div class="topic-item">Wearable and Assistive Systems</div>
+                        <div class="topic-item">Soft Materials and Actuators</div>
+                        <div class="topic-item">Safe Control Strategies</div>
+                        <div class="topic-item" style="font-style: italic; color: #667eea;">...and more are welcome</div>
+                    </div>
+                </div>
+
                 <!-- Organizers Section -->
                 <div id="organizers">
                     <h2 class="section-title">Workshop Organizers</h2>
                     <div class="organizers-grid">
                         <div class="organizer-card">
-                            <div class="organizer-photo">Photo</div>
+                            <div class="organizer-photo"><img src="images/avatar/qi_shao.png" alt="Qi Shao"></div>
                             <div class="organizer-name"><a href="index.html">Qi Shao</a></div>
                             <div class="organizer-affiliation">University of Tokyo</div>
                             <div class="organizer-email">shao-qi [at] g.ecc.u-tokyo.ac.jp</div>
                         </div>
                         <div class="organizer-card">
-                            <div class="organizer-photo">Photo</div>
+                            <div class="organizer-photo"><img src="images/avatar/matteo_cianchetti.jpg" alt="Matteo Cianchetti"></div>
                             <div class="organizer-name">Matteo Cianchetti</div>
                             <div class="organizer-affiliation">Scuola Superiore Sant'Anna</div>
                         </div>
                         <div class="organizer-card">
-                            <div class="organizer-photo">Photo</div>
+                            <div class="organizer-photo"><img src="images/avatar/huichan_zhao.jpg" alt="Huichan Zhao"></div>
                             <div class="organizer-name">Huichan Zhao</div>
                             <div class="organizer-affiliation">Tsinghua University</div>
                         </div>
                         <div class="organizer-card">
-                            <div class="organizer-photo">Photo</div>
+                            <div class="organizer-photo"><img src="images/avatar/fumiya_iida.jpg" alt="Fumiya Iida"></div>
                             <div class="organizer-name">Fumiya Iida</div>
                             <div class="organizer-affiliation">University of Tokyo / University of Cambridge</div>
                         </div>
@@ -245,90 +547,6 @@
                         <br>
                         <p><strong>4. To Identify Future Challenges:</strong> Collaboratively identify remaining hurdles—such as durability, power, and scalability—and outline a research roadmap for creating robust, reliable, and truly safe soft robots.</p>
                     </div>
-                </div>
-
-                <!-- Topics Section -->
-                <div id="topics">
-                    <h2 class="section-title">Topics of Interest</h2>
-                    <div class="topics-list">
-                        <div class="topic-item">Embodied Safety in Robotics</div>
-                        <div class="topic-item">Human–Robot Interaction</div>
-                        <div class="topic-item">Passive and Active Safety Mechanisms</div>
-                        <div class="topic-item">Wearable Devices</div>
-                        <div class="topic-item">Safe and Adaptive Control</div>
-                        <div class="topic-item">Assistive and Rehabilitation Devices</div>
-                        <div class="topic-item">Soft Actuators and Sensors</div>
-                        <div class="topic-item">Adaptive and Safe Control Strategies</div>
-                        <div class="topic-item">Educational and Social Robotics</div>
-                    </div>
-                </div>
-
-                <!-- Invited Speakers Section -->
-                <div id="speakers">
-                    <h2 class="section-title">Invited Speakers</h2>
-                    <p>We are honored to have confirmed the participation of the following distinguished speakers:</p>
-                    <table class="speakers-table">
-                        <tr>
-                            <th style="width: 5%;">#</th>
-                            <th style="width: 30%;">Name</th>
-                            <th style="width: 50%;">Affiliation</th>
-                            <th style="width: 15%;">Status</th>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Yukie Nagai</td>
-                            <td>University of Tokyo</td>
-                            <td>✓ Confirmed</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Shuguang Li</td>
-                            <td>Tsinghua University</td>
-                            <td>✓ Confirmed</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Yong-Lae Park</td>
-                            <td>Seoul National University</td>
-                            <td>✓ Confirmed</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Seppe Terryn</td>
-                            <td>Vrije Universiteit Brussel</td>
-                            <td>✓ Confirmed</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Jonathan Rossiter</td>
-                            <td>University of Bristol</td>
-                            <td>✓ Confirmed</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Kenjiro Tadakuma</td>
-                            <td>Osaka University</td>
-                            <td>✓ Confirmed</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Andrea Bertolini</td>
-                            <td>Scuola Superiore Sant'Anna</td>
-                            <td>✓ Confirmed</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Kenji Suzuki</td>
-                            <td>University of Tsukuba</td>
-                            <td>✓ Confirmed</td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>Matteo Cianchetti</td>
-                            <td>Scuola Superiore Sant'Anna</td>
-                            <td>✓ Confirmed</td>
-                        </tr>
-                    </table>
                 </div>
 
                 <!-- Schedule Section -->
@@ -384,12 +602,12 @@
                         <tr>
                             <td class="time-col">11:10-11:30</td>
                             <td>Invited Talk 4: Prof. Shuguang Li</td>
-                            <td>Soft Actuators and Materials for Safe Human-Robot Interaction (Tentative)</td>
+                            <td>Tentative</td>
                         </tr>
                         <tr>
                             <td class="time-col">11:30-11:50</td>
                             <td>Invited Talk 5: Prof. Yong-Lae Park</td>
-                            <td>Soft Sensing Strategies for Embodied Safety and Proprioception (Tentative)</td>
+                            <td>Tentative</td>
                         </tr>
                         <tr>
                             <td class="time-col">11:50-12:10</td>
@@ -422,7 +640,7 @@
                         <tr>
                             <td class="time-col">14:25-14:45</td>
                             <td>Invited Talk 9: Prof. Andrea Bertolini</td>
-                            <td>The Legal and Ethical Frameworks for Embodied Safety (Tentative)</td>
+                            <td>Tentative</td>
                         </tr>
                         <tr>
                             <td class="time-col">14:45-15:35</td>
