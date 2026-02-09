@@ -72,6 +72,12 @@
                 margin-bottom: 12px;
             }
         }
+        .section-title-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
         .section-title {
             font-size: 24px;
             font-weight: 700;
@@ -330,6 +336,21 @@
         .submission-box strong {
             color: #d63447;
         }
+        .cfp-download-btn {
+            display: inline-block;
+            padding: 6px 14px;
+            background: #667eea;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            transition: background 0.2s, opacity 0.2s;
+        }
+        .cfp-download-btn:hover {
+            background: #764ba2;
+            opacity: 0.95;
+        }
     </style>
 </head>
 
@@ -387,7 +408,10 @@
 
                 <!-- Call for Contributions Section -->
                 <div id="call">
-                    <h2 class="section-title">Call for Contributions</h2>
+                    <div class="section-title-row">
+                        <h2 class="section-title">Call for Contributions</h2>
+                        <a href="data/rs26-safety-cfp-poster.pdf" class="cfp-download-btn" target="_blank" rel="noopener noreferrer">Download CFP Poster (PDF)</a>
+                    </div>
                     <div class="call-box">
                         <h3>📢 We Welcome Your Contributions!</h3>
                         <p>

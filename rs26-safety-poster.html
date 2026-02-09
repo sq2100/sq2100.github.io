@@ -2,314 +2,447 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Living with Robots Safely - RoboSoft 2026 Full-Day Workshop Poster</title>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <title>Living with Robots Safely - RoboSoft 2026</title>
     <style>
-        /* A4 海报容器：屏幕预览 + 打印均为 A4 */
+        /* 全局设置 */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #e0e0e0;
+            font-family: 'Roboto', sans-serif;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* A4 纸张容器 */
         .poster {
             width: 210mm;
             min-height: 297mm;
-            margin: 0 auto;
-            padding: 0;
+            margin: 20px auto;
             background: #fff;
-            box-sizing: border-box;
-            font-family: 'Lato', sans-serif;
-        }
-        /* 打印时占满一页，无多余边距 */
-        @media print {
-            body { margin: 0; padding: 0; background: #fff; }
-            .poster {
-                width: 210mm;
-                min-height: 297mm;
-                margin: 0;
-                padding: 0;
-                box-shadow: none;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            .no-print { display: none !important; }
-        }
-        /* 屏幕预览时加阴影便于区分边界 */
-        @media screen {
-            body { background: #e0e0e0; padding: 20px 0; }
-            .poster { box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
-        }
-
-        .poster-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 22px 24px 20px;
-            text-align: center;
-        }
-        .poster-logos {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+        }
+
+        /* --- 头部 Header --- */
+        .poster-header {
+            background: linear-gradient(100deg, #6c80ea 0%, #7b5ab5 100%);
+            color: white;
+            padding: 15px 30px 25px;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 20px;
-            margin-bottom: 16px;
-        }
-        .poster-logos img {
-            height: 40px;
-            width: auto;
-            object-fit: contain;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-        }
-        .poster-title {
-            font-size: 26px;
-            font-weight: 700;
-            line-height: 1.25;
-            margin-bottom: 8px;
-        }
-        .poster-subtitle {
-            font-size: 18px;
-            opacity: 0.95;
             margin-bottom: 10px;
-        }
-        .poster-subtitle a { color: inherit; text-decoration: none; }
-        .poster-meta {
-            font-size: 15px;
-            opacity: 0.9;
-        }
-
-        .poster-body {
-            padding: 16px 24px 18px;
-            color: #333;
             font-size: 12px;
-            line-height: 1.5;
+            font-weight: 500;
         }
-        .poster-body p {
-            margin: 0 0 12px;
-            text-align: justify;
-        }
-        .poster-body strong { color: #667eea; }
 
-        .poster-highlights {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-            margin: 18px 0;
+        .header-logos img {
+            height: 25px;
+            margin-right: 10px;
+            vertical-align: middle;
+            filter: brightness(0) invert(1); /* 简单的白色滤镜，如果是彩色logo可去掉 */
         }
-        .poster-box {
-            background: #f8f9fa;
-            border-left: 4px solid #667eea;
-            padding: 12px 14px;
-            border-radius: 4px;
+        
+        .header-info span {
+            margin-left: 15px;
+            display: inline-flex;
+            align-items: center;
         }
-        .poster-box h4 {
-            margin: 0 0 8px;
-            font-size: 13px;
-            color: #667eea;
-        }
-        .poster-box p { margin: 0; font-size: 12px; }
 
-        .poster-dates {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 12px 14px;
-            border-radius: 4px;
-            margin: 14px 0;
-        }
-        .poster-dates h4 { margin: 0 0 8px; font-size: 13px; color: #856404; }
-        .poster-dates p { margin: 4px 0; font-size: 12px; }
-
-        .poster-cta {
+        .poster-title {
             text-align: center;
-            margin-top: 20px;
-            padding: 14px;
-            background: #e8e3f3;
+            margin: 10px 0 5px;
+        }
+
+        .poster-title h1 {
+            font-size: 28px;
+            margin: 0;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .poster-subtitle {
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.9;
+            margin-top: 5px;
+            font-weight: 300;
+        }
+
+        /* --- 主体内容 Body --- */
+        .poster-body {
+            padding: 20px 30px;
+            flex: 1;
+        }
+
+        .intro-text {
+            font-size: 11px;
+            line-height: 1.5;
+            color: #444;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+        .intro-text strong { color: #667eea; }
+        .intro-text a { color: #667eea; text-decoration: none; }
+
+        /* --- 蓝色和红色信息框 --- */
+        .info-boxes {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .box {
+            padding: 12px 15px;
             border-radius: 6px;
         }
-        .poster-cta .url {
-            font-size: 13px;
-            font-weight: 700;
-            color: #667eea;
-            word-break: break-all;
-        }
-        .poster-cta .email { font-size: 11px; color: #555; margin-top: 4px; }
 
-        .poster-section-title {
-            font-size: 13px;
+        .box h3 {
+            margin: 0 0 8px;
+            font-size: 14px;
             font-weight: 700;
-            color: #333;
-            margin: 12px 0 8px;
-            padding-bottom: 4px;
-            border-bottom: 2px solid #667eea;
         }
-        .poster-speakers {
+
+        .box ul {
+            margin: 0;
+            padding-left: 15px;
+            font-size: 10px;
+            line-height: 1.6;
+        }
+
+        /* 蓝色盒子 */
+        .box-blue {
+            background-color: #f4f7fd;
+            color: #555;
+        }
+        .box-blue h3 { color: #6c80ea; }
+        .box-blue li::marker { color: #6c80ea; }
+        .more-welcome { display: block; margin-top: 5px; color: #6c80ea; font-style: italic; font-size: 10px; }
+
+        /* 红色盒子 */
+        .box-red {
+            background-color: #fff0ef;
+            color: #555;
+            position: relative;
+        }
+        .box-red h3 { color: #d9534f; display: flex; align-items: center; gap: 5px; }
+        .box-red li::marker { color: #d9534f; }
+        
+        .box-red-content {
+            display: flex;
+            justify-content: space-between;
+        }
+        .box-red-deadlines {
+            font-size: 10px;
+            text-align: right;
+            border-left: 1px solid #ffdcdc;
+            padding-left: 10px;
+            min-width: 140px;
+        }
+        .deadline-item { margin-bottom: 4px; }
+        .deadline-label { font-weight: bold; color: #333; display: block; }
+        .submission-email {
+            margin-top: 8px;
+            font-size: 10px;
+            color: #d9534f;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        /* --- 下半部分布局 (左主栏 + 右侧边栏) --- */
+        .layout-split {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 6px 10px;
+            grid-template-columns: 1fr 140px; /* 右侧栏宽度固定 */
+            gap: 20px;
+            align-items: start;
         }
-        .poster-organizers {
+
+        /* 栏目标题 */
+        .section-header {
+            border-bottom: 2px solid #ccc;
+            margin-bottom: 12px;
+            padding-bottom: 2px;
+        }
+        .section-header h2 {
+            font-size: 16px;
+            margin: 0;
+            color: #333;
+            display: inline-block;
+            border-bottom: 2px solid #333; /* 模拟选中下划线 */
+            margin-bottom: -4px;
+            padding-bottom: 4px;
+        }
+
+        /* --- 演讲者网格 --- */
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .speaker-card {
+            background: #fff;
+            text-align: center;
+        }
+
+        .speaker-img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: #eee;
+            border-radius: 6px;
+            object-fit: cover;
+            margin-bottom: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .speaker-name { font-size: 10px; font-weight: 700; color: #333; line-height: 1.2; }
+        .speaker-affil { font-size: 8px; color: #666; line-height: 1.1; margin-top: 2px; }
+
+        /* --- 组织者网格 --- */
+        .organizers-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
+            gap: 15px;
+            width: 80%; /* 不占满全宽 */
         }
-        .poster-person {
-            text-align: center;
-        }
-        .poster-person-photo {
-            width: 40px;
-            height: 40px;
-            margin: 0 auto 4px;
+        .organizer-card { text-align: center; }
+        .organizer-img {
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            overflow: hidden;
-            background: #e8e3f3;
-        }
-        /* 与主站一致：讲者竖长圆角矩形，组织者圆形 */
-        .poster-speakers .poster-person-photo {
-            width: 32px;
-            height: 40px;
-            border-radius: 5px;
-        }
-        .poster-person-photo img {
-            width: 100%;
-            height: 100%;
             object-fit: cover;
-        }
-        .poster-person-name {
-            font-size: 11px;
-            font-weight: 700;
-            color: #333;
-            line-height: 1.2;
-        }
-        .poster-person-affil {
-            font-size: 9px;
-            color: #666;
-            line-height: 1.2;
+            background: #eee;
+            margin-bottom: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        .poster-footer {
-            padding: 12px 24px 20px;
+        /* --- 右侧边栏 (QR & Logos) --- */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding-top: 10px;
+        }
+
+        .qr-box {
+            background-color: #e6e6fa; /* 浅紫色背景 */
+            padding: 15px 10px;
             text-align: center;
-            font-size: 11px;
-            color: #666;
-            border-top: 1px solid #eee;
+            border-radius: 8px;
+            color: #6a4fa3;
+        }
+        .scan-more {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+        .qr-code {
+            width: 100px;
+            height: 100px;
+            background: #fff; /* 模拟二维码白底 */
+            margin: 0 auto 5px;
+            display: block;
+        }
+        .qr-link {
+            font-size: 8px;
+            word-break: break-all;
+            color: #6a4fa3;
+            text-decoration: none;
+        }
+
+        .sidebar-logos {
+            text-align: center;
+        }
+        .sidebar-logos img {
+            width: 80%;
+            margin-bottom: 15px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* 打印样式适配 */
+        @media print {
+            body { background: white; }
+            .poster { margin: 0; box-shadow: none; width: 100%; height: 100%; }
         }
     </style>
 </head>
 <body>
-    <p class="no-print" style="text-align:center; margin:0 0 12px; font-size:14px; color:#666;">
-        A4 海报预览 · 使用浏览器 <strong>打印 → 另存为 PDF</strong> 得到 PDF 便于转发
-    </p>
-    <div class="poster">
-        <header class="poster-header">
-            <div class="poster-logos">
-                <img src="images/avatar/RoboSoft2026_logo_menu_1280.png" alt="RoboSoft 2026">
-                <img src="images/avatar/raslogo.png" alt="RAS">
-                <img src="images/avatar/IEEE-Logo.jpg" alt="IEEE">
-            </div>
-            <h1 class="poster-title">Living with Robots Safely:<br>Embodying Asimov's First Law through Soft Robotics</h1>
-            <div class="poster-subtitle">
-                <a href="https://www.robosoft2026.org/program/workshops/">IEEE RAS RoboSoft 2026 Workshop</a>
-            </div>
-            <div class="poster-meta">📍 Kanazawa, Japan &nbsp;|&nbsp; 📅 April 11, 2026</div>
-        </header>
 
-        <div class="poster-body">
-            <p>
-                <strong>Embodied safety</strong> is the foundation of trust in human–robot interaction: a robot's physical body must be inherently safe. Soft robotics—with compliant materials, deformable structures, and adaptive control—provides a tangible path to realizing this principle. This workshop will highlight recent advances in soft robotics for wearable technologies, assistive systems, and human–robot collaboration, and will discuss how to define, verify, and balance safety with performance.
-            </p>
-
-            <div class="poster-highlights">
-                <div class="poster-box">
-                    <h4>Topics</h4>
-                    <p>Soft robotics safety, human–robot interaction, wearable & assistive systems, soft materials & actuators, safe control.</p>
-                </div>
-                <div class="poster-box">
-                    <h4>Contributions</h4>
-                    <p>Poster presentations (5-min talk + poster) and live demonstrations (10-min demo + hands-on). All welcome.</p>
-                </div>
+<div class="poster">
+    <header class="poster-header">
+        <div class="header-top">
+            <div class="header-logos">
+                <span style="font-weight:bold; font-size:14px; display:inline-flex; align-items:center;">
+                    <img src="images/avatar/RoboSoft2026_logo_menu_1280.png" alt="RoboSoft" style="height:20px;"> 
+                    2026 ROBOSOFT
+                </span>
             </div>
-
-            <div class="poster-dates">
-                <h4>Important dates</h4>
-                <p><strong>Submission deadline:</strong> March 18, 2026</p>
-                <p><strong>Notification:</strong> March 25, 2026</p>
+            <div class="header-info">
+                <span>📍 Kanazawa, Japan</span>
+                <span>📅 April 11, 2026</span>
             </div>
+        </div>
+        
+        <div class="poster-title">
+            <h1>Living with Robots Safely :<br>Embodying Asimov's First Law through Soft Robotics</h1>
+        </div>
+        <div class="poster-subtitle">
+            IEEE RAS RoboSoft 2026 Full-Day Workshop
+        </div>
+    </header>
 
-            <h3 class="poster-section-title">Invited Speakers</h3>
-            <div class="poster-speakers">
-                <div class="poster-person">
-                    <div class="poster-person-photo"><img src="images/avatar/yukie_nagai.png" alt="Yukie Nagai"></div>
-                    <div class="poster-person-name">Yukie Nagai</div>
-                    <div class="poster-person-affil">Univ. of Tokyo</div>
-                </div>
-                <div class="poster-person">
-                    <div class="poster-person-photo"><img src="images/avatar/shuguang_li.jpg" alt="Shuguang Li"></div>
-                    <div class="poster-person-name">Shuguang Li</div>
-                    <div class="poster-person-affil">Tsinghua Univ.</div>
-                </div>
-                <div class="poster-person">
-                    <div class="poster-person-photo"><img src="images/avatar/yong_lae_park.jpg" alt="Yong-Lae Park"></div>
-                    <div class="poster-person-name">Yong-Lae Park</div>
-                    <div class="poster-person-affil">Seoul National Univ.</div>
-                </div>
-                <div class="poster-person">
-                    <div class="poster-person-photo"><img src="images/avatar/seppe_terryn.png" alt="Seppe Terryn"></div>
-                    <div class="poster-person-name">Seppe Terryn</div>
-                    <div class="poster-person-affil">Vrije Univ. Brussel</div>
-                </div>
-                <div class="poster-person">
-                    <div class="poster-person-photo"><img src="images/avatar/jonathan_rossiter.png" alt="Jonathan Rossiter"></div>
-                    <div class="poster-person-name">Jonathan Rossiter</div>
-                    <div class="poster-person-affil">Univ. of Bristol</div>
-                </div>
-                <div class="poster-person">
-                    <div class="poster-person-photo"><img src="images/avatar/kenjiro_tadakuma.png" alt="Kenjiro Tadakuma"></div>
-                    <div class="poster-person-name">Kenjiro Tadakuma</div>
-                    <div class="poster-person-affil">Osaka Univ.</div>
-                </div>
-                <div class="poster-person">
-                    <div class="poster-person-photo"><img src="images/avatar/andrea_bertolini.jpg" alt="Andrea Bertolini"></div>
-                    <div class="poster-person-name">Andrea Bertolini</div>
-                    <div class="poster-person-affil">Sant'Anna</div>
-                </div>
-                <div class="poster-person">
-                    <div class="poster-person-photo"><img src="images/avatar/kenji_suzuki.jpg" alt="Kenji Suzuki"></div>
-                    <div class="poster-person-name">Kenji Suzuki</div>
-                    <div class="poster-person-affil">Univ. of Tsukuba</div>
-                </div>
-                <div class="poster-person">
-                    <div class="poster-person-photo"><img src="images/avatar/matteo_cianchetti.jpg" alt="Matteo Cianchetti"></div>
-                    <div class="poster-person-name">Matteo Cianchetti</div>
-                    <div class="poster-person-affil">Sant'Anna</div>
-                </div>
+    <div class="poster-body">
+        <p class="intro-text">
+            Asimov's First Law states that "<strong>a robot may not injure a human being</strong> or, through inaction, allow a human being to come to harm." This principle serves as the foundation of <strong>trust</strong> and <strong>safety</strong> in human–robot interaction. Soft robotics—with its compliant materials, deformable structures, and adaptive control—provides a tangible path to realizing this ideal. This workshop will highlight recent advances in soft robotics for wearable technologies, assistive systems, and human–robot collaboration, and will discuss how to define, verify, and balance safety with performance.
+        </p>
+
+        <div class="info-boxes">
+            <div class="box box-blue">
+                <h3>Topics</h3>
+                <ul>
+                    <li>Soft Robotics Safety</li>
+                    <li>Human–Robot Interaction</li>
+                    <li>Wearable and Assistive Systems</li>
+                    <li>Soft Materials and Actuators</li>
+                    <li>Safe Control Strategies</li>
+                </ul>
+                <span class="more-welcome">...and more are welcome</span>
             </div>
 
-            <h3 class="poster-section-title">Organizers</h3>
-            <div class="poster-organizers">
-                <div class="poster-person">
-                    <div class="poster-person-photo"><img src="images/avatar/qi_shao.png" alt="Qi Shao"></div>
-                    <div class="poster-person-name">Qi Shao</div>
-                    <div class="poster-person-affil">Univ. of Tokyo</div>
+            <div class="box box-red">
+                <h3>📢 Call for Posters & Demonstrations</h3>
+                <div class="box-red-content">
+                    <ul style="flex:1;">
+                        <li><strong>Poster</strong> (5-min talk + poster)</li>
+                        <li><strong>Demo</strong> (10-min talk + on-site robot demo)</li>
+                    </ul>
+                    <div class="box-red-deadlines">
+                        <div class="deadline-item">
+                            <span class="deadline-label">Submission Deadline:</span>
+                            March 18, 2026
+                        </div>
+                        <div class="deadline-item">
+                            <span class="deadline-label">Notification of Acceptance:</span>
+                            March 25, 2026
+                        </div>
+                    </div>
                 </div>
-                <div class="poster-person">
-                    <div class="poster-person-photo"><img src="images/avatar/matteo_cianchetti.jpg" alt="Matteo Cianchetti"></div>
-                    <div class="poster-person-name">Matteo Cianchetti</div>
-                    <div class="poster-person-affil">Sant'Anna</div>
-                </div>
-                <div class="poster-person">
-                    <div class="poster-person-photo"><img src="images/avatar/huichan_zhao.jpg" alt="Huichan Zhao"></div>
-                    <div class="poster-person-name">Huichan Zhao</div>
-                    <div class="poster-person-affil">Tsinghua Univ.</div>
-                </div>
-                <div class="poster-person">
-                    <div class="poster-person-photo"><img src="images/avatar/fumiya_iida.jpg" alt="Fumiya Iida"></div>
-                    <div class="poster-person-name">Fumiya Iida</div>
-                    <div class="poster-person-affil">Tokyo / Cambridge</div>
-                </div>
-            </div>
-
-            <div class="poster-cta">
-                <div class="url">https://www.robosoft2026.org/program/workshops/</div>
-                <div class="email">Submission: shao-qi@g.ecc.u-tokyo.ac.jp</div>
+                <div class="submission-email">Submission: shao-qi@g.ecc.u-tokyo.ac.jp</div>
             </div>
         </div>
 
-        <footer class="poster-footer">
-            Living with Robots Safely Workshop @ IEEE RAS RoboSoft 2026
-        </footer>
+        <div class="layout-split">
+            
+            <div class="main-column">
+                <div class="section-header">
+                    <h2>Invited Speakers</h2>
+                </div>
+                <div class="speakers-grid">
+                    <div class="speaker-card">
+                        <img src="images/avatar/yukie_nagai.png" class="speaker-img" alt="Photo">
+                        <div class="speaker-name">Yukie Nagai</div>
+                        <div class="speaker-affil">University of Tokyo</div>
+                    </div>
+                    <div class="speaker-card">
+                        <img src="images/avatar/shuguang_li.jpg" class="speaker-img" alt="Photo">
+                        <div class="speaker-name">Shuguang Li</div>
+                        <div class="speaker-affil">Tsinghua University</div>
+                    </div>
+                    <div class="speaker-card">
+                        <img src="images/avatar/yong_lae_park.jpg" class="speaker-img" alt="Photo">
+                        <div class="speaker-name">Yong-Lae Park</div>
+                        <div class="speaker-affil">Seoul National University</div>
+                    </div>
+                    <div class="speaker-card">
+                        <img src="images/avatar/seppe_terryn.png" class="speaker-img" alt="Photo">
+                        <div class="speaker-name">Seppe Terryn</div>
+                        <div class="speaker-affil">Vrije Universiteit Brussel</div>
+                    </div>
+                    <div class="speaker-card">
+                        <img src="images/avatar/jonathan_rossiter.png" class="speaker-img" alt="Photo">
+                        <div class="speaker-name">Jonathan Rossiter</div>
+                        <div class="speaker-affil">University of Bristol</div>
+                    </div>
+                    <div class="speaker-card">
+                        <img src="images/avatar/kenjiro_tadakuma.png" class="speaker-img" alt="Photo">
+                        <div class="speaker-name">Kenjiro Tadakuma</div>
+                        <div class="speaker-affil">Osaka University</div>
+                    </div>
+                    <div class="speaker-card">
+                        <img src="images/avatar/andrea_bertolini.jpg" class="speaker-img" alt="Photo">
+                        <div class="speaker-name">Andrea Bertolini</div>
+                        <div class="speaker-affil">Scuola Superiore Sant'Anna</div>
+                    </div>
+                    <div class="speaker-card">
+                        <img src="images/avatar/kenji_suzuki.jpg" class="speaker-img" alt="Photo">
+                        <div class="speaker-name">Kenji Suzuki</div>
+                        <div class="speaker-affil">University of Tsukuba</div>
+                    </div>
+                    <div class="speaker-card">
+                        <img src="images/avatar/matteo_cianchetti.jpg" class="speaker-img" alt="Photo">
+                        <div class="speaker-name">Matteo Cianchetti</div>
+                        <div class="speaker-affil">Scuola Superiore Sant'Anna</div>
+                    </div>
+                </div>
+
+                <div class="section-header" style="margin-top: 10px;">
+                    <h2>Organizers</h2>
+                </div>
+                <div class="organizers-grid">
+                    <div class="organizer-card">
+                        <img src="images/avatar/qi_shao.png" class="organizer-img" alt="Photo">
+                        <div class="speaker-name">Qi Shao</div>
+                        <div class="speaker-affil">University of Tokyo</div>
+                    </div>
+                    <div class="organizer-card">
+                        <img src="images/avatar/matteo_cianchetti.jpg" class="organizer-img" alt="Photo">
+                        <div class="speaker-name">Matteo Cianchetti</div>
+                        <div class="speaker-affil">Scuola Superiore Sant'Anna</div>
+                    </div>
+                    <div class="organizer-card">
+                        <img src="images/avatar/huichan_zhao.jpg" class="organizer-img" alt="Photo">
+                        <div class="speaker-name">Huichan Zhao</div>
+                        <div class="speaker-affil">Tsinghua University</div>
+                    </div>
+                    <div class="organizer-card">
+                        <img src="images/avatar/fumiya_iida.jpg" class="organizer-img" alt="Photo">
+                        <div class="speaker-name">Fumiya Iida</div>
+                        <div class="speaker-affil">Univ. of Tokyo / Cambridge</div>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="sidebar">
+                <div class="qr-box">
+                    <div class="scan-more">Scan for More</div>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.robosoft2026.org" class="qr-code" alt="QR Code">
+                    <a href="sq2100.com/rs26-safety" class="qr-link">sq2100.com/rs26-safety</a>
+                </div>
+
+                <div class="sidebar-logos">
+                    <img src="images/avatar/SoftRoboticsLogo.png" alt="Soft Robotics" style="opacity: 0.8;">
+                    <img src="images/avatar/IEEE-Logo.jpg" alt="IEEE RAS" style="margin-top:5px;">
+                </div>
+            </aside>
+
+        </div>
     </div>
+</div>
+
 </body>
 </html>
