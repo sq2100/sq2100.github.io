@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Living with Robots Safely - RoboSoft 2026 Full-Day Workshop Poster</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <style>
+        /* A4 海报容器：屏幕预览 + 打印均为 A4 */
+        .poster {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 0;
+            background: #fff;
+            box-sizing: border-box;
+            font-family: 'Lato', sans-serif;
+        }
+        /* 打印时占满一页，无多余边距 */
+        @media print {
+            body { margin: 0; padding: 0; background: #fff; }
+            .poster {
+                width: 210mm;
+                min-height: 297mm;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .no-print { display: none !important; }
+        }
+        /* 屏幕预览时加阴影便于区分边界 */
+        @media screen {
+            body { background: #e0e0e0; padding: 20px 0; }
+            .poster { box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+        }
+
+        .poster-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 22px 24px 20px;
+            text-align: center;
+        }
+        .poster-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 16px;
+        }
+        .poster-logos img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+        .poster-title {
+            font-size: 26px;
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 8px;
+        }
+        .poster-subtitle {
+            font-size: 18px;
+            opacity: 0.95;
+            margin-bottom: 10px;
+        }
+        .poster-subtitle a { color: inherit; text-decoration: none; }
+        .poster-meta {
+            font-size: 15px;
+            opacity: 0.9;
+        }
+
+        .poster-body {
+            padding: 16px 24px 18px;
+            color: #333;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+        .poster-body p {
+            margin: 0 0 12px;
+            text-align: justify;
+        }
+        .poster-body strong { color: #667eea; }
+
+        .poster-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin: 18px 0;
+        }
+        .poster-box {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 12px 14px;
+            border-radius: 4px;
+        }
+        .poster-box h4 {
+            margin: 0 0 8px;
+            font-size: 13px;
+            color: #667eea;
+        }
+        .poster-box p { margin: 0; font-size: 12px; }
+
+        .poster-dates {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px 14px;
+            border-radius: 4px;
+            margin: 14px 0;
+        }
+        .poster-dates h4 { margin: 0 0 8px; font-size: 13px; color: #856404; }
+        .poster-dates p { margin: 4px 0; font-size: 12px; }
+
+        .poster-cta {
+            text-align: center;
+            margin-top: 20px;
+            padding: 14px;
+            background: #e8e3f3;
+            border-radius: 6px;
+        }
+        .poster-cta .url {
+            font-size: 13px;
+            font-weight: 700;
+            color: #667eea;
+            word-break: break-all;
+        }
+        .poster-cta .email { font-size: 11px; color: #555; margin-top: 4px; }
+
+        .poster-section-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #333;
+            margin: 12px 0 8px;
+            padding-bottom: 4px;
+            border-bottom: 2px solid #667eea;
+        }
+        .poster-speakers {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px 10px;
+        }
+        .poster-organizers {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        .poster-person {
+            text-align: center;
+        }
+        .poster-person-photo {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 4px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #e8e3f3;
+        }
+        /* 与主站一致：讲者竖长圆角矩形，组织者圆形 */
+        .poster-speakers .poster-person-photo {
+            width: 32px;
+            height: 40px;
+            border-radius: 5px;
+        }
+        .poster-person-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .poster-person-name {
+            font-size: 11px;
+            font-weight: 700;
+            color: #333;
+            line-height: 1.2;
+        }
+        .poster-person-affil {
+            font-size: 9px;
+            color: #666;
+            line-height: 1.2;
+        }
+
+        .poster-footer {
+            padding: 12px 24px 20px;
+            text-align: center;
+            font-size: 11px;
+            color: #666;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <p class="no-print" style="text-align:center; margin:0 0 12px; font-size:14px; color:#666;">
+        A4 海报预览 · 使用浏览器 <strong>打印 → 另存为 PDF</strong> 得到 PDF 便于转发
+    </p>
+    <div class="poster">
+        <header class="poster-header">
+            <div class="poster-logos">
+                <img src="images/avatar/RoboSoft2026_logo_menu_1280.png" alt="RoboSoft 2026">
+                <img src="images/avatar/raslogo.png" alt="RAS">
+                <img src="images/avatar/IEEE-Logo.jpg" alt="IEEE">
+            </div>
+            <h1 class="poster-title">Living with Robots Safely:<br>Embodying Asimov's First Law through Soft Robotics</h1>
+            <div class="poster-subtitle">
+                <a href="https://www.robosoft2026.org/program/workshops/">IEEE RAS RoboSoft 2026 Workshop</a>
+            </div>
+            <div class="poster-meta">📍 Kanazawa, Japan &nbsp;|&nbsp; 📅 April 11, 2026</div>
+        </header>
+
+        <div class="poster-body">
+            <p>
+                <strong>Embodied safety</strong> is the foundation of trust in human–robot interaction: a robot's physical body must be inherently safe. Soft robotics—with compliant materials, deformable structures, and adaptive control—provides a tangible path to realizing this principle. This workshop will highlight recent advances in soft robotics for wearable technologies, assistive systems, and human–robot collaboration, and will discuss how to define, verify, and balance safety with performance.
+            </p>
+
+            <div class="poster-highlights">
+                <div class="poster-box">
+                    <h4>Topics</h4>
+                    <p>Soft robotics safety, human–robot interaction, wearable & assistive systems, soft materials & actuators, safe control.</p>
+                </div>
+                <div class="poster-box">
+                    <h4>Contributions</h4>
+                    <p>Poster presentations (5-min talk + poster) and live demonstrations (10-min demo + hands-on). All welcome.</p>
+                </div>
+            </div>
+
+            <div class="poster-dates">
+                <h4>Important dates</h4>
+                <p><strong>Submission deadline:</strong> March 18, 2026</p>
+                <p><strong>Notification:</strong> March 25, 2026</p>
+            </div>
+
+            <h3 class="poster-section-title">Invited Speakers</h3>
+            <div class="poster-speakers">
+                <div class="poster-person">
+                    <div class="poster-person-photo"><img src="images/avatar/yukie_nagai.png" alt="Yukie Nagai"></div>
+                    <div class="poster-person-name">Yukie Nagai</div>
+                    <div class="poster-person-affil">Univ. of Tokyo</div>
+                </div>
+                <div class="poster-person">
+                    <div class="poster-person-photo"><img src="images/avatar/shuguang_li.jpg" alt="Shuguang Li"></div>
+                    <div class="poster-person-name">Shuguang Li</div>
+                    <div class="poster-person-affil">Tsinghua Univ.</div>
+                </div>
+                <div class="poster-person">
+                    <div class="poster-person-photo"><img src="images/avatar/yong_lae_park.jpg" alt="Yong-Lae Park"></div>
+                    <div class="poster-person-name">Yong-Lae Park</div>
+                    <div class="poster-person-affil">Seoul National Univ.</div>
+                </div>
+                <div class="poster-person">
+                    <div class="poster-person-photo"><img src="images/avatar/seppe_terryn.png" alt="Seppe Terryn"></div>
+                    <div class="poster-person-name">Seppe Terryn</div>
+                    <div class="poster-person-affil">Vrije Univ. Brussel</div>
+                </div>
+                <div class="poster-person">
+                    <div class="poster-person-photo"><img src="images/avatar/jonathan_rossiter.png" alt="Jonathan Rossiter"></div>
+                    <div class="poster-person-name">Jonathan Rossiter</div>
+                    <div class="poster-person-affil">Univ. of Bristol</div>
+                </div>
+                <div class="poster-person">
+                    <div class="poster-person-photo"><img src="images/avatar/kenjiro_tadakuma.png" alt="Kenjiro Tadakuma"></div>
+                    <div class="poster-person-name">Kenjiro Tadakuma</div>
+                    <div class="poster-person-affil">Osaka Univ.</div>
+                </div>
+                <div class="poster-person">
+                    <div class="poster-person-photo"><img src="images/avatar/andrea_bertolini.jpg" alt="Andrea Bertolini"></div>
+                    <div class="poster-person-name">Andrea Bertolini</div>
+                    <div class="poster-person-affil">Sant'Anna</div>
+                </div>
+                <div class="poster-person">
+                    <div class="poster-person-photo"><img src="images/avatar/kenji_suzuki.jpg" alt="Kenji Suzuki"></div>
+                    <div class="poster-person-name">Kenji Suzuki</div>
+                    <div class="poster-person-affil">Univ. of Tsukuba</div>
+                </div>
+                <div class="poster-person">
+                    <div class="poster-person-photo"><img src="images/avatar/matteo_cianchetti.jpg" alt="Matteo Cianchetti"></div>
+                    <div class="poster-person-name">Matteo Cianchetti</div>
+                    <div class="poster-person-affil">Sant'Anna</div>
+                </div>
+            </div>
+
+            <h3 class="poster-section-title">Organizers</h3>
+            <div class="poster-organizers">
+                <div class="poster-person">
+                    <div class="poster-person-photo"><img src="images/avatar/qi_shao.png" alt="Qi Shao"></div>
+                    <div class="poster-person-name">Qi Shao</div>
+                    <div class="poster-person-affil">Univ. of Tokyo</div>
+                </div>
+                <div class="poster-person">
+                    <div class="poster-person-photo"><img src="images/avatar/matteo_cianchetti.jpg" alt="Matteo Cianchetti"></div>
+                    <div class="poster-person-name">Matteo Cianchetti</div>
+                    <div class="poster-person-affil">Sant'Anna</div>
+                </div>
+                <div class="poster-person">
+                    <div class="poster-person-photo"><img src="images/avatar/huichan_zhao.jpg" alt="Huichan Zhao"></div>
+                    <div class="poster-person-name">Huichan Zhao</div>
+                    <div class="poster-person-affil">Tsinghua Univ.</div>
+                </div>
+                <div class="poster-person">
+                    <div class="poster-person-photo"><img src="images/avatar/fumiya_iida.jpg" alt="Fumiya Iida"></div>
+                    <div class="poster-person-name">Fumiya Iida</div>
+                    <div class="poster-person-affil">Tokyo / Cambridge</div>
+                </div>
+            </div>
+
+            <div class="poster-cta">
+                <div class="url">https://www.robosoft2026.org/program/workshops/</div>
+                <div class="email">Submission: shao-qi@g.ecc.u-tokyo.ac.jp</div>
+            </div>
+        </div>
+
+        <footer class="poster-footer">
+            Living with Robots Safely Workshop @ IEEE RAS RoboSoft 2026
+        </footer>
+    </div>
+</body>
+</html>
