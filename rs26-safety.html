@@ -280,6 +280,7 @@
         .type-poster { background-color: #a8b5d6; }
         .type-break { background-color: #d5d5d5; color: #666; }
         .type-opening { background-color: #ffc107; color: #333; }
+        .type-closing { background-color: #ffc107; color: #333; }
         .schedule-table .speaker-sub {
             display: block;
             font-size: 12px;
@@ -334,6 +335,11 @@
             border-left: 4px solid transparent;
         }
         .schedule-table tr.row-opening td {
+            padding: 10px 14px;
+            border-left: 4px solid #ffc107;
+            font-size: 14px;
+        }
+        .schedule-table tr.row-closing td {
             padding: 10px 14px;
             border-left: 4px solid #ffc107;
             font-size: 14px;
@@ -687,8 +693,8 @@
                         <tr class="row-talk">
                             <td class="time-col">11:55</td>
                             <td><span class="type-badge type-talk">Invited Talk</span></td>
-                            <td class="speaker-name-cell">Andrea Bertolini<span class="speaker-sub">Scuola Superiore Sant'Anna</span></td>
-                            <td>&mdash;</td>
+                            <td class="speaker-name-cell">Yong-Lae Park<span class="speaker-sub">Seoul National University</span></td>
+                            <td>Blowing Up Expectations: Balloons in Soft Robotics</td>
                         </tr>
                         <tr class="row-demo">
                             <td class="time-col">12:20</td>
@@ -720,11 +726,23 @@
                             <td class="speaker-name-cell">Yukie Nagai<span class="speaker-sub">University of Tokyo</span></td>
                             <td>Rethinking Safety through Physiological Embodiment</td>
                         </tr>
-                        <tr class="row-talk">
+                        <tr class="row-poster">
                             <td class="time-col">14:25</td>
-                            <td><span class="type-badge type-talk">Invited Talk</span></td>
-                            <td class="speaker-name-cell">Yong-Lae Park<span class="speaker-sub">Seoul National University</span></td>
-                            <td>&mdash;</td>
+                            <td><span class="type-badge type-poster">Poster</span></td>
+                            <td>Ngoc-Duy Tran<span class="speaker-sub">The University of Tokyo</span></td>
+                            <td>Probe-to-Grasp Manipulation Using Self-Sensing Pneumatic Variable-Stiffness Joints</td>
+                        </tr>
+                        <tr class="row-poster">
+                            <td class="time-col">14:35</td>
+                            <td><span class="type-badge type-poster">Poster</span></td>
+                            <td>Yuna Tanno<span class="speaker-sub">Chiba University</span></td>
+                            <td>Research on Control Systems for Soft Actuators for Minimally Invasive Surgery</td>
+                        </tr>
+                        <tr class="row-poster">
+                            <td class="time-col">14:45</td>
+                            <td><span class="type-badge type-poster">Poster</span></td>
+                            <td>Tung D. Ta<span class="speaker-sub">The University of Tokyo</span></td>
+                            <td>Simultaneous Position and Stiffness Control of Continuum Robot By Multiagent Reinforcement Learning</td>
                         </tr>
                         <tr class="row-talk">
                             <td class="time-col">14:50</td>
@@ -732,23 +750,23 @@
                             <td class="speaker-name-cell">Seppe Terryn<span class="speaker-sub">Vrije Universiteit Brussel</span></td>
                             <td>Material and Sensing Strategies for Resilient and Safe Robotics</td>
                         </tr>
-                        <tr class="row-poster">
+                        <tr class="row-talk">
                             <td class="time-col">15:15</td>
-                            <td><span class="type-badge type-poster">Poster</span></td>
-                            <td>Ngoc-Duy Tran<span class="speaker-sub">The University of Tokyo</span></td>
-                            <td>Probe-to-Grasp Manipulation Using Self-Sensing Pneumatic Variable-Stiffness Joints</td>
+                            <td><span class="type-badge type-talk">Invited Talk</span></td>
+                            <td class="speaker-name-cell">Andrea Bertolini<span class="speaker-sub">Scuola Superiore Sant'Anna</span></td>
+                            <td>&mdash;</td>
                         </tr>
-                        <tr class="row-poster">
-                            <td class="time-col">15:25</td>
-                            <td><span class="type-badge type-poster">Poster</span></td>
-                            <td>Yuna Tanno<span class="speaker-sub">Chiba University</span></td>
-                            <td>Research on Control Systems for Soft Actuators for Minimally Invasive Surgery</td>
+                        <tr class="row-break">
+                            <td class="time-col">15:40</td>
+                            <td><span class="type-badge type-break">Break</span></td>
+                            <td></td>
+                            <td>Coffee break &middot; 15 min</td>
                         </tr>
-                        <tr class="row-poster">
-                            <td class="time-col">15:35</td>
-                            <td><span class="type-badge type-poster">Poster</span></td>
-                            <td>Tung D. Ta<span class="speaker-sub">The University of Tokyo</span></td>
-                            <td>Simultaneous Position and Stiffness Control of Continuum Robot By Multiagent Reinforcement Learning</td>
+                        <tr class="row-closing">
+                            <td class="time-col">16:00</td>
+                            <td><span class="type-badge type-closing">Closing</span></td>
+                            <td></td>
+                            <td>Closing remarks</td>
                         </tr>
                     </table>
                 </div>
